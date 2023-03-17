@@ -7,5 +7,11 @@ export const modifier = (stat, multiplier, major=true, positive=true) => {
 
   if(positive) sign = 1
 
+  if(!major && ordinal > 1 && ordinal < 5){
+    left_shift = -ordinal;
+  } else if(!major && ordinal > 4){
+    left_shift = -4;
+  }
+
   return parseInt((ordinal + left_shift) * sign * multiplier);  
 }

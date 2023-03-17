@@ -23,8 +23,76 @@ it.each`
 	${5}   | ${true}   | ${false} | ${5}
 	${5}   | ${false}  | ${true}  | ${0}
 	${5}   | ${false}  | ${false} | ${0}
+	${6}   | ${true}   | ${true}  | ${-5}
+	${6}   | ${true}   | ${false} | ${5}
+	${6}   | ${false}  | ${true}  | ${0}
+	${6}   | ${false}  | ${false} | ${0}
+	${7}   | ${true}   | ${true}  | ${-5}
+	${7}   | ${true}   | ${false} | ${5}
+	${7}   | ${false}  | ${true}  | ${0}
+	${7}   | ${false}  | ${false} | ${0}
+	${8}   | ${true}   | ${true}  | ${-5}
+	${8}   | ${true}   | ${false} | ${5}
+	${8}   | ${false}  | ${true}  | ${0}
+	${8}   | ${false}  | ${false} | ${0}
+	${9}   | ${true}   | ${true}  | ${0}
+	${9}   | ${true}   | ${false} | ${0}
+	${9}   | ${false}  | ${true}  | ${0}
+	${9}   | ${false}  | ${false} | ${0}
+	${10}  | ${true}   | ${true}  | ${0}
+	${10}  | ${true}   | ${false} | ${0}
+	${10}  | ${false}  | ${true}  | ${0}
+	${10}  | ${false}  | ${false} | ${0}
+	${11}  | ${true}   | ${true}  | ${0}
+	${11}  | ${true}   | ${false} | ${0}
+	${11}  | ${false}  | ${true}  | ${0}
+	${11}  | ${false}  | ${false} | ${0}
+	${12}  | ${true}   | ${true}  | ${0}
+	${12}  | ${true}   | ${false} | ${0}
+	${12}  | ${false}  | ${true}  | ${0}
+	${12}  | ${false}  | ${false} | ${0}
+	${13}  | ${true}   | ${true}  | ${5}
+	${13}  | ${true}   | ${false} | ${-5}
+	${13}  | ${false}  | ${true}  | ${0}
+	${13}  | ${false}  | ${false} | ${0}
+	${14}  | ${true}   | ${true}  | ${5}
+	${14}  | ${true}   | ${false} | ${-5}
+	${14}  | ${false}  | ${true}  | ${0}
+	${14}  | ${false}  | ${false} | ${0}
+	${15}  | ${true}   | ${true}  | ${5}
+	${15}  | ${true}   | ${false} | ${-5}
+	${15}  | ${false}  | ${true}  | ${0}
+	${15}  | ${false}  | ${false} | ${0}
+	${16}  | ${true}   | ${true}  | ${5}
+	${16}  | ${true}   | ${false} | ${-5}
+	${16}  | ${false}  | ${true}  | ${0}
+	${16}  | ${false}  | ${false} | ${0}
+	${17}  | ${true}   | ${true}  | ${10}
+	${17}  | ${true}   | ${false} | ${-10}
+	${17}  | ${false}  | ${true}  | ${5}
+	${17}  | ${false}  | ${false} | ${-5}
+	${18}  | ${true}   | ${true}  | ${10}
+	${18}  | ${true}   | ${false} | ${-10}
+	${18}  | ${false}  | ${true}  | ${5}
+	${18}  | ${false}  | ${false} | ${-5}
+	${19}  | ${true}   | ${true}  | ${10}
+	${19}  | ${true}   | ${false} | ${-10}
+	${19}  | ${false}  | ${true}  | ${5}
+	${19}  | ${false}  | ${false} | ${-5}
+	${20}  | ${true}   | ${true}  | ${10}
+	${20}  | ${true}   | ${false} | ${-10}
+	${20}  | ${false}  | ${true}  | ${5}
+	${20}  | ${false}  | ${false} | ${-5}
 	${21}  | ${true}   | ${true}  | ${15}
-	`('returns the expect result for the given value', ({value,  major, positive, expected }) => {
+	${21}  | ${true}   | ${false} | ${-15}
+	${21}  | ${false}  | ${true}  | ${10}
+	${21}  | ${false}  | ${false} | ${-10}
+	${25}  | ${true}   | ${true}  | ${20}
+	${25}  | ${true}   | ${false} | ${-20}
+	${25}  | ${false}  | ${true}  | ${15}
+	${25}  | ${false}  | ${false} | ${-15}
+	`('returns the result $expected for the value $value when positive = $positive and major = $major',
+      ({value,  major, positive, expected }) => {
   const result = modifier(value, 5, major, positive);
   expect(result).toBe(parseInt(expected));
 })
