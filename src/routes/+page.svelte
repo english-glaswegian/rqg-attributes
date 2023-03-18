@@ -1,21 +1,27 @@
 <script>
-	import DamageBonus from '../lib/components/DamageBonus.svelte';
+	import Attributes from '../lib/components/Attributes.svelte';
 
 	let strength = '';
-	let constitution = undefined;
-	let size = undefined;
-	let dexterity = undefined;
-	let intelligence = undefined;
-	let power = undefined;
-	let charisma = undefined;
+	let constitution = '';
+	let size = '';
+	let dexterity = '';
+	let intelligence = '';
+	let power = '';
+	let charisma = '';
 
 	$: strength = strength.replace(/[^0-9]/g, '');
+	$: constitution = constitution.replace(/[^0-9]/g, '');
+	$: size = size.replace(/[^0-9]/g, '');
+	$: dexterity = dexterity.replace(/[^0-9]/g, '');
+	$: intelligence = intelligence.replace(/[^0-9]/g, '');
+	$: power = power.replace(/[^0-9]/g, '');
+	$: charisma = charisma.replace(/[^0-9]/g, '');
 </script>
 
 <div class="ui container">
 	<h1 class="ui center aligned header">RQG Attribute Bonus Calculator</h1>
 	<div class="ui segment">
-		<div class="ui left aligned label">CHARACTERISTICS</div>
+		<div class="ui top left attached label">CHARACTERISTICS</div>
 		<p />
 		<div class="ui form">
 			<div class="fields">
@@ -64,9 +70,12 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="ui form"> -->
-	<!-- 	<div class="fields"> -->
-	<!-- 	</div> -->
-	<!-- </div> -->
-	<DamageBonus str={strength} siz={size} />
+	<Attributes
+		str={strength}
+		con={constitution}
+		siz={size}
+		dex={dexterity}
+		pow={power}
+		cha={charisma}
+	/>
 </div>

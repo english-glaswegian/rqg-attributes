@@ -1,5 +1,10 @@
 export const max_enc = (str, con) => {
-	if (con > str) {
+
+  if(str == '' || con == '' || isNaN(str) || isNaN(con)){
+    return ''
+  };
+
+  if (con > str) {
 		return parseFloat(str);
 	}
 

@@ -16,6 +16,7 @@ it.each`
 	${36} | ${36} | ${'3D6+4'}
 	${37} | ${36} | ${'4D6+5'}
 	${44} | ${44} | ${'4D6+5'}
+	${''} | ${''} | ${''}
 	`('returns the spirit combat damage $expected for the POW $pow and CHA $cha',
       ({pow, cha, expected }) => {
   const result = spirit_dmg(pow, cha);

@@ -1,5 +1,8 @@
 export const dex_sr = (dex) => {
   
+  if(dex == '' || isNaN(dex) || dex === undefined){
+    return ''
+  }
 
   if(dex < 6) {
     return 5;

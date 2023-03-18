@@ -1,5 +1,9 @@
 export const spirit_dmg= (pow, cha) => {
   
+  if(pow == '' || cha == '' || isNaN(pow) || isNaN(cha)){
+    return ''
+  };
+
   const pow_cha = pow + cha;
 
   if(pow_cha < 13) {

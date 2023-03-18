@@ -11,6 +11,9 @@ it.each`
 	${14} | ${18} | ${14.0}  
 	${13} | ${11} | ${12.0}  
 	${19} | ${12} | ${15.5}  
+	${''} | ${12} | ${''}  
+	${12} | ${''} | ${''}  
+	${''} | ${''} | ${''}  
 	`('returns the max enc value $enc when STR is $str and CON is $con',
       ({str,  con, expected }) => {
   const result = max_enc(str, con);
