@@ -5,7 +5,7 @@
 	siz = parseInt(siz);
 </script>
 
-<div class="ui large label">
+<div class="ui large blue label">
 	{#if dmg_bonus(str, siz) != ''}
 		Damage Bonus:&nbsp;&nbsp;&nbsp;{dmg_bonus(str, siz)}
 	{:else}

@@ -4,7 +4,7 @@
 	siz = parseInt(siz);
 </script>
 
-<div class="ui large label">
+<div class="ui large blue label">
 	{#if siz_sr(siz) != ''}
 		SIZ SR: &nbsp;&nbsp;&nbsp;{siz_sr(siz)}
 	{:else}

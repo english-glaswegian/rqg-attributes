@@ -6,7 +6,7 @@
 	pow = parseInt(pow);
 </script>
 
-<div class="ui large label">
+<div class="ui large blue label">
 	{#if hit_points(con, siz, pow) != '' && !isNaN(hit_points(con, siz, pow))}
 		Hit Points:&nbsp;{hit_points(con, siz, pow)}
 	{:else}

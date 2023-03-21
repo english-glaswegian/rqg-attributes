@@ -5,7 +5,7 @@
 	cha = parseInt(cha);
 </script>
 
-<div class="ui large label">
+<div class="ui large blue label">
 	{#if spirit_dmg(pow, cha) != ''}
 		Spirit Combat Damage:&nbsp;{spirit_dmg(pow, cha)}
 	{:else}

@@ -4,7 +4,7 @@
 	dex = parseInt(dex);
 </script>
 
-<div class="ui large label">
+<div class="ui large blue label">
 	{#if dex_sr(dex) !== ''}
 		DEX SR:&nbsp;&nbsp;&nbsp;{dex_sr(dex)}
 	{:else}

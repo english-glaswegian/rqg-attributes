@@ -11,8 +11,8 @@
 </script>
 
 <div class="ui segment">
-	<div class="ui top left attached label">ATTRIBUTES</div>
-	<div class="ui grid">
+	<div class="ui top left attached blue label">ATTRIBUTES</div>
+	<div class="doubling stackable six column ui grid container">
 		<div class="three wide column">
 			<DamageBonus str={parseInt(str)} siz={parseInt(siz)} />
 		</div>

@@ -3,7 +3,7 @@
 	con = parseInt(con);
 </script>
 
-<div class="ui large label">
+<div class="ui large blue label">
 	{#if con != '' && !isNaN(con)}
     Healing Rate {Math.ceil(con/6)} /week
 	{:else}

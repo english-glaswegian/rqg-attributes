@@ -1,7 +1,22 @@
-import { render, screen } from '@testing-library/svelte';
 import { skillText } from './skillText.js';
 
-it('returns the value of "0%" when passed the integer 0', () => {
-  const output = skillText(0)
-	expect(output).toEqual('0%');
+it.each`
+	input | expected 
+	${0}  | ${'0%'}
+	${''} | ${''}
+	${5}  | ${'+5%'}
+	${-5} | ${'-5%'}
+	${10} | ${'+10%'}
+	${-10}| ${'-10%'}
+	${15} | ${'+15%'}
+	${-15}| ${'-15%'}
+	${20} | ${'+20%'}
+	${-20}| ${'-20%'}
+	${25} | ${'+25%'}
+	${-25}| ${'-25%'}
+	${30} | ${'+30%'}
+	${-30}| ${'-30%'}
+`('returns the value of $expected when passed the value $input', ({input, expected}) => {
+  const output = skillText(input)
+	expect(output).toEqual(expected);
 })

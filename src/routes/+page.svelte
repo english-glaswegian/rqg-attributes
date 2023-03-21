@@ -20,51 +20,52 @@ import Bonuses from '../lib/components/Bonuses.svelte';
 </script>
 
 <div class="ui container">
+  <p></p>
 	<h1 class="ui center aligned header">RQG Attribute Bonus Calculator</h1>
 	<div class="ui segment">
-		<div class="ui top left attached label">CHARACTERISTICS</div>
+		<div class="ui top left attached blue label">CHARACTERISTICS</div>
 		<p />
-		<div class="ui form">
-			<div class="fields">
+		<div class="ui equal width form">
+			<div class="doubling stackable fields">
 				<div class="two wide field">
 					<div class="ui labeled input">
-						<label class="ui label" for="STR">STR</label>
+						<label class="ui blue label" for="STR">STR</label>
 						<input id="STR" bind:value={strength} />
 					</div>
 				</div>
 				<div class="two wide field">
 					<div class="ui labeled input">
-						<label class="ui label" for="CON">CON</label>
+						<label class="ui blue label" for="CON">CON</label>
 						<input id="CON" bind:value={constitution} />
 					</div>
 				</div>
 				<div class="two wide field">
 					<div class="ui labeled input">
-						<label class="ui label" for="SIZ">SIZ</label>
+						<label class="ui blue label" for="SIZ">SIZ</label>
 						<input id="SIZ" bind:value={size} />
 					</div>
 				</div>
 				<div class="two wide field">
 					<div class="ui labeled input">
-						<label class="ui label" for="DEX">DEX</label>
+						<label class="ui blue label" for="DEX">DEX</label>
 						<input id="DEX" bind:value={dexterity} />
 					</div>
 				</div>
 				<div class="two wide field">
 					<div class="ui labeled input">
-						<label class="ui label" for="INT">INT</label>
+						<label class="ui blue label" for="INT">INT</label>
 						<input id="INT" bind:value={intelligence} />
 					</div>
 				</div>
 				<div class="two wide field">
 					<div class="ui labeled input">
-						<label class="ui label" for="POW">POW</label>
+						<label class="ui blue label" for="POW">POW</label>
 						<input id="POW" bind:value={power} />
 					</div>
 				</div>
 				<div class="two wide field">
 					<div class="ui labeled input">
-						<label class="ui label" for="CHA">CHA</label>
+						<label class="ui blue label" for="CHA">CHA</label>
 						<input id="CHA" bind:value={charisma} />
 					</div>
 				</div>

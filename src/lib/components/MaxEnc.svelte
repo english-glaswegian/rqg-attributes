@@ -5,7 +5,7 @@
 	con = parseInt(con);
 </script>
 
-<div class="ui large label">
+<div class="ui large blue label">
 	{#if max_enc(str, con) != ''}
 		Max Enc:&nbsp;{max_enc(str, con)}
 	{:else}
