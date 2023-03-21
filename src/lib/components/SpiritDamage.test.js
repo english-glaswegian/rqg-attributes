@@ -8,7 +8,7 @@ it('displays the expected spirit combat damage', () => {
 })
 
 it('displays only the label if POW or CHA is not valid', () => {
-  render(SpiritDamage, {siz: '', cha: ''});
+  render(SpiritDamage, {pow: '', cha: ''});
 	const input = screen.getByText('Spirit Combat Damage:');
 	expect(input).toBeInTheDocument();
 })

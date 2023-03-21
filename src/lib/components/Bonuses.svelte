@@ -1,28 +1,10 @@
 <script>
 	// import Bonus from './Bonus.svelte';
 	import { skillBonus } from '../skillBonus.js';
+	import { skillText } from '../skillText.js';
 
 	export let str, siz, dex, int, pow, cha;
 
-	const skillText = (skillPercent) => {
-		if (skillPercent == '' || isNaN(skillPercent)) {
-			return '';
-		} else {
-			return new Intl.NumberFormat('en-US', {
-				style: 'percent',
-				maximumFractionDigits: 0,
-				signDisplay: 'exceptZero'
-			}).format(String(skillPercent / 100));
-			// console.log('Bonus:', skillText)
-		}
-	};
-	// let stats = {str, con, siz, dex, int, pow, cha}
-
-	// let agility_mod =
-	// 	modifier(str, 5, false, true) +
-	// 	modifier(siz, 5, false, false) +
-	// 	modifier(dex, 5, true, true) +
-	// 	modifier(pow, 5, false, true);
 </script>
 
 <div class="ui segment">
@@ -43,7 +25,6 @@
 					{/if}
 				</div>
 			</div>
-			<!-- <Bonus skillCategory={"AGILITY"} {str} {con} {siz} {dex} {int} {pow} {cha} /> -->
 		</div>
 		<div class="column">
 			<div class="ui center aligned grid">
