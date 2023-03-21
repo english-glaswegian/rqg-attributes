@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/svelte';
+import userEvent from '@testing-library/user-event';
 import page from './routes/+page.svelte';
 
 describe('home page layout', () => {
@@ -48,5 +49,24 @@ describe('home page layout', () => {
 		render(page);
 		const input = screen.getByLabelText('CHA')
 		expect(input).toBeInTheDocument();
+	});
+});
+
+describe('home page interactions', () => {
+
+it.each`
+	stat     | entered      | expected 
+	${'STR'} | ${'09abcd'}  | ${'09'}
+	${'CON'} | ${'xyz16'}   | ${'16'}
+	${'SIZ'} | ${'e1f3gh'}  | ${'13'}
+	${'DEX'} | ${'ij6wkl'}  | ${'6'}
+	${'INT'} | ${'mno10pqu'}| ${'10'}
+	${'POW'} | ${'rst20uv'} | ${'20'}
+	${'CHA'} | ${'wx1y3xf'} | ${'13'}
+	`('$stat input does not accept non-numeric characters', async ({stat, entered, expected}) => {
+		render(page);
+		const input = screen.getByLabelText(stat)
+    await userEvent.type(input, entered)
+    expect(input).toHaveValue(expected);
 	});
 });

@@ -1,5 +1,6 @@
 <script>
 	import Attributes from '../lib/components/Attributes.svelte';
+import Bonuses from '../lib/components/Bonuses.svelte';
 
 	let strength = '';
 	let constitution = '';
@@ -75,6 +76,14 @@
 		con={constitution}
 		siz={size}
 		dex={dexterity}
+		pow={power}
+		cha={charisma}
+	/>
+	<Bonuses
+		str={strength}
+		siz={size}
+		dex={dexterity}
+    int={intelligence}
 		pow={power}
 		cha={charisma}
 	/>
