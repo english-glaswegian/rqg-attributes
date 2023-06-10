@@ -1,43 +1,40 @@
 import { modifier } from './modifier.js';
+import { skillText } from './skillText.js';
 
 export function skillBonus(
 	skillCategory,
 	{ str = '', siz = '', dex = '', int = '', pow = '', cha = '' } = {}
 ) {
-	let skillBonus;
+	let skillBonus = 'Not Calculated';
 
 	switch (skillCategory) {
 		case 'AGILITY':
-			if (
+			if (!(
 				str == '' ||
 				siz == '' ||
 				dex == '' ||
 				pow == '' ||
-				isNaN(str) ||
-				isNaN(siz) ||
-				isNaN(dex) ||
-				isNaN(pow)
-			) {
-				skillBonus = '';
-			} else {
+				isNaN(str) || 
+				isNaN(siz) || 
+				isNaN(dex) || 
+				isNaN(pow)))
+      {
 				skillBonus =
 					modifier(str, 5, false, true) +
 					modifier(siz, 5, false, false) +
 					modifier(dex, 5, true, true) +
 					modifier(pow, 5, false, true);
-			}
-			break;
+      }
+      break;
 		case 'COMMUNICATION':
-			if (
+			if (!(
 				int == '' ||
 				cha == '' ||
 				pow == '' ||
 				isNaN(int) ||
 				isNaN(cha) ||
-				isNaN(pow)
+				isNaN(pow))
 			) {
-				skillBonus = '';
-			} else {
 				skillBonus =
 					modifier(int, 5, false, true) +
 					modifier(cha, 5, true, true) +
@@ -45,49 +42,43 @@ export function skillBonus(
 			}
 			break;
 		case 'MAGIC':
-			if (
+			if (!(
 				cha == '' ||
 				pow == '' ||
 				isNaN(cha) ||
-				isNaN(pow)
+				isNaN(pow))
 			) {
-				skillBonus = '';
-			} else {
 				skillBonus =
 					modifier(pow, 5, true, true) +
 					modifier(cha, 5, false, true);
 			}
 			break;
 		case 'KNOWLEDGE':
-			if (
-				cha == '' ||
+			if (!(
+				pow == '' ||
 				int == '' ||
-				isNaN(cha) ||
-				isNaN(int)
+				isNaN(pow) ||
+				isNaN(int))
 			) {
-				skillBonus = '';
-			} else {
 				skillBonus =
 					modifier(pow, 5, false, true) +
 					modifier(int, 5, true, true);
 			}
 			break;
 		case 'PERCEPTION':
-			if (
-				cha == '' ||
+			if (!(
+				pow == '' ||
 				int == '' ||
-				isNaN(cha) ||
-				isNaN(int)
+				isNaN(pow) ||
+				isNaN(int))
 			) {
-				skillBonus = '';
-			} else {
 				skillBonus =
 					modifier(pow, 5, false, true) +
 					modifier(int, 5, true, true);
 			}
 			break;
 		case 'STEALTH':
-			if (
+			if (!(
 				int == '' ||
 				siz == '' ||
 				dex == '' ||
@@ -95,10 +86,8 @@ export function skillBonus(
 				isNaN(int) ||
 				isNaN(siz) ||
 				isNaN(dex) ||
-				isNaN(pow)
+				isNaN(pow))
 			) {
-				skillBonus = '';
-			} else {
 				skillBonus =
 					modifier(int, 5, true, true) +
 					modifier(siz, 5, true, false) +
@@ -107,7 +96,7 @@ export function skillBonus(
 			}
 			break;
 		default:
-			if (
+			if (!(
 				str == '' ||
 				dex == '' ||
 				int == '' ||
@@ -115,10 +104,8 @@ export function skillBonus(
 				isNaN(str) ||
 				isNaN(dex) ||
 				isNaN(int) ||
-				isNaN(pow)
+				isNaN(pow))
 			) {
-				skillBonus = '';
-			} else {
 				skillBonus =
 					modifier(str, 5, false, true) +
 					modifier(int, 5, true, true) +
@@ -127,5 +114,6 @@ export function skillBonus(
 			}
 			break;
 	}
-	return skillBonus;
+  
+	return skillText(skillBonus);
 }

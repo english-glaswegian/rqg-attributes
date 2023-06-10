@@ -1,6 +1,6 @@
 <script>
 	import Attributes from '../lib/components/Attributes.svelte';
-import Bonuses from '../lib/components/Bonuses.svelte';
+	import Bonuses from '../lib/components/Bonuses.svelte';
 
 	let strength = '';
 	let constitution = '';
@@ -20,7 +20,7 @@ import Bonuses from '../lib/components/Bonuses.svelte';
 </script>
 
 <div class="ui container">
-  <p></p>
+	<p />
 	<h1 class="ui center aligned header">RQG Attribute Bonus Calculator</h1>
 	<div class="ui segment">
 		<div class="ui top left attached blue label">CHARACTERISTICS</div>
@@ -84,7 +84,7 @@ import Bonuses from '../lib/components/Bonuses.svelte';
 		str={strength}
 		siz={size}
 		dex={dexterity}
-    int={intelligence}
+		int={intelligence}
 		pow={power}
 		cha={charisma}
 	/>

@@ -1,6 +1,5 @@
 <script>
 	import { skillBonus } from '../skillBonus.js';
-	import { skillText } from '../skillText.js';
 
 	export let skillCategory, str, siz, dex, int, pow, cha;
 
@@ -11,11 +10,11 @@
 					<h4 class="ui header">{skillCategory}</h4>
 				</div>
 				<div class="right floated right aligned eight wide column">
-					{#if skillText(parseInt(skillBonus(skillCategory , { str, siz, dex, int, pow, cha } ))) === ''}
+					{#if skillBonus(skillCategory , { str, siz, dex, int, pow, cha } ) === 'Not Calculated'}
 						<p>Not Calculated</p>
 					{:else}
 						<h4 class="ui header">
-							{skillText(parseInt(skillBonus(skillCategory, { str, siz, dex, int, pow, cha })))}
+							{skillBonus(skillCategory, { str, siz, dex, int, pow, cha })}
 						</h4>
 					{/if}
 				</div>

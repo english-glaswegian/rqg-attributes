@@ -8,5 +8,8 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: 'src/setupTests.js',
+    coverage: {
+      provider: 'istanbul' // or 'c8'
+    },
 	}
 });

@@ -3,7 +3,7 @@ import { skillText } from './skillText.js';
 it.each`
 	input | expected 
 	${0}  | ${'0%'}
-	${''} | ${''}
+	${'Not Calculated'} | ${'Not Calculated'}
 	${5}  | ${'+5%'}
 	${-5} | ${'-5%'}
 	${10} | ${'+10%'}
