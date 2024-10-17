@@ -1,9 +1,8 @@
 import { it, expect } from 'vitest';
 import { dex_sr } from './dex_sr.js';
 
-
 it.each`
-	dex   | expected 
+	dex   | expected
 	${5}  | ${5}
 	${6}  | ${4}
 	${8}  | ${4}
@@ -23,9 +22,7 @@ it.each`
 	${24} | ${0}
 	${25} | ${0}
 	${26} | ${0}
-	`('returns the DEX SR $expected for the DEX $dex',
-      ({dex, expected }) => {
-  const result = dex_sr(dex);
-  expect(result).toBe(expected);
-})
-
+`('returns the DEX SR $expected for the DEX $dex', ({ dex, expected }) => {
+	const result = dex_sr(dex);
+	expect(result).toBe(expected);
+});
