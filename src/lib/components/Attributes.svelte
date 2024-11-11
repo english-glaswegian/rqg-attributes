@@ -28,7 +28,7 @@
 		<div class="two wide column">
 			<HitPoints con={parseInt(con)} siz={parseInt(siz)} pow={parseInt(pow)} />
 		</div>
-		<div class="two wide column">
+		<div class="three wide column">
 			<MaxEnc str={parseInt(str)} con={parseInt(con)} />
 		</div>
 		<div class="four wide column">
