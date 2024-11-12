@@ -6,6 +6,9 @@
 	import HitPoints from './HitPoints.svelte';
 	import MaxEnc from './MaxEnc.svelte';
 	import SpiritDamage from './SpiritDamage.svelte';
+	import BaseLocationPoints from './BaseLocationPoints.svelte';
+	import ArmPoints from './ArmPoints.svelte';
+	import ChestPoints from './ChestPoints.svelte';
 
 	export let str, con, siz, dex, pow, cha;
 </script>
@@ -33,6 +36,15 @@
 		</div>
 		<div class="four wide column">
 			<SpiritDamage pow={parseInt(pow)} cha={parseInt(cha)} />
+		</div>
+		<div class="four wide column">
+			<BaseLocationPoints con={parseInt(con)} siz={parseInt(siz)} pow={parseInt(pow)} />
+		</div>
+		<div class="two wide column">
+			<ArmPoints con={parseInt(con)} siz={parseInt(siz)} pow={parseInt(pow)} />
+		</div>
+		<div class="two wide column">
+			<ChestPoints con={parseInt(con)} siz={parseInt(siz)} pow={parseInt(pow)} />
 		</div>
 	</div>
 </div>
